@@ -16,14 +16,18 @@
 		29C6982219DA5ADA0030A38D /* GNGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6982119DA5ADA0030A38D /* GNGAppDelegate.m */; };
 		29C6982519DA5ADA0030A38D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C6982319DA5ADA0030A38D /* Main.storyboard */; };
 		29C6982819DA5ADA0030A38D /* GNGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6982719DA5ADA0030A38D /* GNGViewController.m */; };
-		29C6982B19DA5ADA0030A38D /* GNGMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6982A19DA5ADA0030A38D /* GNGMyScene.m */; };
-		29C6982D19DA5ADA0030A38D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C6982C19DA5ADA0030A38D /* Spaceship.png */; };
 		29C6982F19DA5ADA0030A38D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C6982E19DA5ADA0030A38D /* Images.xcassets */; };
 		29C6983619DA5ADA0030A38D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C6983519DA5ADA0030A38D /* XCTest.framework */; };
 		29C6983719DA5ADA0030A38D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C6980F19DA5ADA0030A38D /* Foundation.framework */; };
 		29C6983819DA5ADA0030A38D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C6981319DA5ADA0030A38D /* UIKit.framework */; };
 		29C6984019DA5ADB0030A38D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29C6983E19DA5ADB0030A38D /* InfoPlist.strings */; };
 		29C6984219DA5ADB0030A38D /* Go_Nawaz_GoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6984119DA5ADB0030A38D /* Go_Nawaz_GoTests.m */; };
+		29C6984D19DA5C810030A38D /* GNGGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6984C19DA5C810030A38D /* GNGGameScene.m */; };
+		29C6985319DA601A0030A38D /* GNGNawaz.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6985219DA601A0030A38D /* GNGNawaz.m */; };
+		29C6985519DA63F00030A38D /* NawazAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C6985419DA63F00030A38D /* NawazAnimations.plist */; };
+		29C6987519DADCD10030A38D /* Nawaz.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987419DADCD10030A38D /* Nawaz.atlas */; };
+		29C6987919DADF750030A38D /* NawazPuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987719DADF750030A38D /* NawazPuffTrail.sks */; };
+		29C6987A19DADF750030A38D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987819DADF750030A38D /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +55,20 @@
 		29C6982419DA5ADA0030A38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29C6982619DA5ADA0030A38D /* GNGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNGViewController.h; sourceTree = "<group>"; };
 		29C6982719DA5ADA0030A38D /* GNGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNGViewController.m; sourceTree = "<group>"; };
-		29C6982919DA5ADA0030A38D /* GNGMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNGMyScene.h; sourceTree = "<group>"; };
-		29C6982A19DA5ADA0030A38D /* GNGMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNGMyScene.m; sourceTree = "<group>"; };
-		29C6982C19DA5ADA0030A38D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		29C6982E19DA5ADA0030A38D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29C6983419DA5ADA0030A38D /* Go Nawaz GoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Go Nawaz GoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C6983519DA5ADA0030A38D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		29C6983D19DA5ADB0030A38D /* Go Nawaz GoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Go Nawaz GoTests-Info.plist"; sourceTree = "<group>"; };
 		29C6983F19DA5ADB0030A38D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29C6984119DA5ADB0030A38D /* Go_Nawaz_GoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Go_Nawaz_GoTests.m; sourceTree = "<group>"; };
+		29C6984B19DA5C810030A38D /* GNGGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGGameScene.h; sourceTree = "<group>"; };
+		29C6984C19DA5C810030A38D /* GNGGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGGameScene.m; sourceTree = "<group>"; };
+		29C6985119DA601A0030A38D /* GNGNawaz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGNawaz.h; sourceTree = "<group>"; };
+		29C6985219DA601A0030A38D /* GNGNawaz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGNawaz.m; sourceTree = "<group>"; };
+		29C6985419DA63F00030A38D /* NawazAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NawazAnimations.plist; sourceTree = "<group>"; };
+		29C6987419DADCD10030A38D /* Nawaz.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Nawaz.atlas; sourceTree = "<group>"; };
+		29C6987719DADF750030A38D /* NawazPuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NawazPuffTrail.sks; sourceTree = "<group>"; };
+		29C6987819DADF750030A38D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,14 +130,18 @@
 		29C6981719DA5ADA0030A38D /* Go Nawaz Go */ = {
 			isa = PBXGroup;
 			children = (
+				29C6987619DADE790030A38D /* Particale Effects */,
+				29C6987419DADCD10030A38D /* Nawaz.atlas */,
+				29C6985619DA6AC60030A38D /* Resources */,
 				29C6982019DA5ADA0030A38D /* GNGAppDelegate.h */,
 				29C6982119DA5ADA0030A38D /* GNGAppDelegate.m */,
 				29C6982319DA5ADA0030A38D /* Main.storyboard */,
 				29C6982619DA5ADA0030A38D /* GNGViewController.h */,
 				29C6982719DA5ADA0030A38D /* GNGViewController.m */,
-				29C6982919DA5ADA0030A38D /* GNGMyScene.h */,
-				29C6982A19DA5ADA0030A38D /* GNGMyScene.m */,
-				29C6982C19DA5ADA0030A38D /* Spaceship.png */,
+				29C6984B19DA5C810030A38D /* GNGGameScene.h */,
+				29C6984C19DA5C810030A38D /* GNGGameScene.m */,
+				29C6985119DA601A0030A38D /* GNGNawaz.h */,
+				29C6985219DA601A0030A38D /* GNGNawaz.m */,
 				29C6982E19DA5ADA0030A38D /* Images.xcassets */,
 				29C6981819DA5ADA0030A38D /* Supporting Files */,
 			);
@@ -162,6 +175,23 @@
 				29C6983E19DA5ADB0030A38D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29C6985619DA6AC60030A38D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29C6985419DA63F00030A38D /* NawazAnimations.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29C6987619DADE790030A38D /* Particale Effects */ = {
+			isa = PBXGroup;
+			children = (
+				29C6987719DADF750030A38D /* NawazPuffTrail.sks */,
+				29C6987819DADF750030A38D /* spark.png */,
+			);
+			name = "Particale Effects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,8 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C6981C19DA5ADA0030A38D /* InfoPlist.strings in Resources */,
+				29C6987919DADF750030A38D /* NawazPuffTrail.sks in Resources */,
+				29C6987519DADCD10030A38D /* Nawaz.atlas in Resources */,
+				29C6987A19DADF750030A38D /* spark.png in Resources */,
+				29C6985519DA63F00030A38D /* NawazAnimations.plist in Resources */,
 				29C6982F19DA5ADA0030A38D /* Images.xcassets in Resources */,
-				29C6982D19DA5ADA0030A38D /* Spaceship.png in Resources */,
 				29C6982519DA5ADA0030A38D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +299,8 @@
 				29C6982819DA5ADA0030A38D /* GNGViewController.m in Sources */,
 				29C6981E19DA5ADA0030A38D /* main.m in Sources */,
 				29C6982219DA5ADA0030A38D /* GNGAppDelegate.m in Sources */,
-				29C6982B19DA5ADA0030A38D /* GNGMyScene.m in Sources */,
+				29C6984D19DA5C810030A38D /* GNGGameScene.m in Sources */,
+				29C6985319DA601A0030A38D /* GNGNawaz.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +428,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Nawaz Go/Go Nawaz Go-Prefix.pch";
 				INFOPLIST_FILE = "Go Nawaz Go/Go Nawaz Go-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
@@ -408,6 +443,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Nawaz Go/Go Nawaz Go-Prefix.pch";
 				INFOPLIST_FILE = "Go Nawaz Go/Go Nawaz Go-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
