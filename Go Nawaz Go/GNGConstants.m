@@ -10,4 +10,9 @@
 
 @implementation GNGConstants
 
+const uint32_t kGNGCategoryNawaz = 0x1 << 0;
+
+const uint32_t kGNGCategoryGround = 0x1 << 1;
+
+
 @end

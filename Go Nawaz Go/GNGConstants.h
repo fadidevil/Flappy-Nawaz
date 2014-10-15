@@ -10,4 +10,7 @@
 
 @interface GNGConstants : NSObject
 
+extern const uint32_t kGNGCategoryNawaz;
+extern const uint32_t kGNGCategoryGround;
+
 @end

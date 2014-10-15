@@ -10,4 +10,6 @@
 
 @interface GNGScrollingLayer : GNGScrollingNode
 
+- (id)initWithTiles:(NSArray*)tileSpriteNode;
+
 @end

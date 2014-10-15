@@ -7,10 +7,11 @@
 //
 
 #import "GNGNawaz.h"
+#import "GNGConstants.h"
 
 @interface GNGNawaz()
 @property (nonatomic) NSMutableArray *nawazAnimations;
-@property (nonatomic) SKEmitterNode *puffTrailEmitter;
+//@property (nonatomic) SKEmitterNode *puffTrailEmitter;
 @property (nonatomic) CGFloat puffTrailBirthRate;
 
 @end
@@ -21,11 +22,39 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
 
 - (id)init
 {
-    self = [super initWithImageNamed:@"Nawaz@2x"];
+    self = [super initWithImageNamed:@"Nawaz"];
     if (self) {
         
-        self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.size.width * 0.5];
-        self.physicsBody.mass = 0.08;
+//        Setup Physics body with path
+        
+        
+        CGFloat offsetX = self.frame.size.width * self.anchorPoint.x;
+        CGFloat offsetY = self.frame.size.height * self.anchorPoint.y;
+        
+        CGMutablePathRef path = CGPathCreateMutable();
+        
+        CGPathMoveToPoint(path, NULL, 20 - offsetX, 2 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 22 - offsetX, 3 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 21 - offsetX, 4 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 17 - offsetX, 7 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 16 - offsetX, 10 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 15 - offsetX, 17 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 11 - offsetX, 20 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 8 - offsetX, 21 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 3 - offsetX, 16 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 2 - offsetX, 11 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 5 - offsetX, 7 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 6 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 8 - offsetX, 0 - offsetY);
+        
+        CGPathCloseSubpath(path);
+        
+        self.physicsBody = [SKPhysicsBody bodyWithPolygonFromPath:path];
+        
+        self.physicsBody.mass = 0.039;
+        
+        self.physicsBody.categoryBitMask = kGNGCategoryNawaz;
+        self.physicsBody.categoryBitMask = kGNGCategoryGround;
         
         
         _nawazAnimations = [[NSMutableArray alloc] init];
@@ -34,20 +63,19 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
         SKAction *animation = [SKAction animateWithTextures:frames timePerFrame:0.133 resize:NO restore:NO];
         [self runAction:[SKAction repeatActionForever:animation]];
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"NawazAnimations" ofType:@"plist"];
-        NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:path];
+        NSString *AnimationPlistpath = [[NSBundle mainBundle] pathForResource:@"NawazAnimations" ofType:@"plist"];
+        NSDictionary *animations = [NSDictionary dictionaryWithContentsOfFile:AnimationPlistpath];
         for (NSString *key in animations) {
             [self.nawazAnimations addObject:[self animationFormArray:[animations objectForKey:key] withDuration:0.4]];
         }
         
         //puff trail
-        NSString *particleFile = [[NSBundle mainBundle] pathForResource:@"NawazPuffTrail" ofType:@"sks"];
+        /* NSString *particleFile = [[NSBundle mainBundle] pathForResource:@"NawazPuffTrail" ofType:@"sks"];
         _puffTrailEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:particleFile];
-
         _puffTrailEmitter.position = CGPointMake(-self.size.width * 0.5, -5);
         [self addChild:self.puffTrailEmitter];
         self.puffTrailBirthRate = _puffTrailEmitter.particleBirthRate;
-        self.puffTrailEmitter.particleBirthRate = 0;
+        self.puffTrailEmitter.particleBirthRate = 0; */
         
         [self setRandomColour];
     }
@@ -55,14 +83,30 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
 }
 - (void)setEngineRunning:(BOOL)engineRunning
 {
-    _engineRunning = engineRunning;
+    _engineRunning = engineRunning && !self.crashed;
     if (engineRunning) {
         [self actionForKey:kKeyNawazAnimation].speed = 1;
-        self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
+        
+        //self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     }
     else {
         [self actionForKey:kKeyNawazAnimation].speed = 0;
-        self.puffTrailEmitter.particleBirthRate = 0;
+        //self.puffTrailEmitter.particleBirthRate = 0;
+    }
+}
+
+- (void)setAccelerating:(BOOL)accelerating
+{
+    _accelerating = accelerating && !self.crashed;
+}
+
+
+- (void)setCrashed:(BOOL)crashed
+{
+    _crashed = crashed;
+    if (crashed) {
+        self.engineRunning = NO;
+        self.accelerating = NO;
     }
 }
 
@@ -71,11 +115,22 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
 {
     [self removeActionForKey:kKeyNawazAnimation];
     SKAction *animation = [self.nawazAnimations objectAtIndex:arc4random_uniform(self.nawazAnimations.count)];
+
     [self runAction:animation withKey:kKeyNawazAnimation];
     if (!self.engineRunning) {
         [self actionForKey:kKeyNawazAnimation].speed =0;
     }
 
+}
+
+- (void)collide:(SKPhysicsBody *)body
+{
+    if (!self.crashed) {
+        if (body.categoryBitMask == kGNGCategoryGround) {
+            
+            self.crashed = YES;
+       }
+    }
 }
 
 
@@ -87,7 +142,7 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
     
     //Get planes atls.
  
-    SKTextureAtlas *nawazAtles = [SKTextureAtlas atlasNamed:@"Nawaz"];
+    SKTextureAtlas *nawazAtles = [SKTextureAtlas atlasNamed:@"Graphics"];
     
     //Loop through texture
     for (NSString *textureName in textureNames) {

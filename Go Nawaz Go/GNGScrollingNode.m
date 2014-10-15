@@ -10,4 +10,12 @@
 
 @implementation GNGScrollingNode
 
+- (void)updateWithTimeElpased:(NSTimeInterval)timeElapsed
+{
+    if (self.scrolling) {
+        self.position = CGPointMake(self.position.x + (self.horizontalScrollSpeed * timeElapsed), self.position.y);
+    }
+    
+}
+
 @end

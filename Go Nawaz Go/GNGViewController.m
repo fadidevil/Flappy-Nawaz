@@ -25,6 +25,7 @@
     if (!skView.scene) {
         skView.showsFPS = YES;
         skView.showsNodeCount = YES;
+        skView.showsDrawCount = YES;
         
         // Create and configure the scene.
         SKScene * scene = [GNGGameScene sceneWithSize:skView.bounds.size];

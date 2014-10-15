@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298EBB9B19DE62F4001FE1DA /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 298EBB9919DE62F4001FE1DA /* spark.png */; };
+		29C1B38219E7ADD600AF1274 /* GNGScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */; };
+		29C1B38519E7AFC000AF1274 /* GNGScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */; };
+		29C1B38819E83C0900AF1274 /* GNGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38719E83C0900AF1274 /* GNGConstants.m */; };
 		29C6981019DA5ADA0030A38D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C6980F19DA5ADA0030A38D /* Foundation.framework */; };
 		29C6981219DA5ADA0030A38D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C6981119DA5ADA0030A38D /* CoreGraphics.framework */; };
 		29C6981419DA5ADA0030A38D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C6981319DA5ADA0030A38D /* UIKit.framework */; };
@@ -25,9 +29,7 @@
 		29C6984D19DA5C810030A38D /* GNGGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6984C19DA5C810030A38D /* GNGGameScene.m */; };
 		29C6985319DA601A0030A38D /* GNGNawaz.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C6985219DA601A0030A38D /* GNGNawaz.m */; };
 		29C6985519DA63F00030A38D /* NawazAnimations.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29C6985419DA63F00030A38D /* NawazAnimations.plist */; };
-		29C6987519DADCD10030A38D /* Nawaz.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987419DADCD10030A38D /* Nawaz.atlas */; };
-		29C6987919DADF750030A38D /* NawazPuffTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987719DADF750030A38D /* NawazPuffTrail.sks */; };
-		29C6987A19DADF750030A38D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987819DADF750030A38D /* spark.png */; };
+		29C6987519DADCD10030A38D /* Graphics.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 29C6987419DADCD10030A38D /* Graphics.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		298EBB9919DE62F4001FE1DA /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		29C1B38019E7ADD600AF1274 /* GNGScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGScrollingNode.h; sourceTree = "<group>"; };
+		29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGScrollingNode.m; sourceTree = "<group>"; };
+		29C1B38319E7AFC000AF1274 /* GNGScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGScrollingLayer.h; sourceTree = "<group>"; };
+		29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGScrollingLayer.m; sourceTree = "<group>"; };
+		29C1B38619E83C0900AF1274 /* GNGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGConstants.h; sourceTree = "<group>"; };
+		29C1B38719E83C0900AF1274 /* GNGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGConstants.m; sourceTree = "<group>"; };
 		29C6980C19DA5ADA0030A38D /* Go Nawaz Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go Nawaz Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C6980F19DA5ADA0030A38D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29C6981119DA5ADA0030A38D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,9 +75,7 @@
 		29C6985119DA601A0030A38D /* GNGNawaz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGNawaz.h; sourceTree = "<group>"; };
 		29C6985219DA601A0030A38D /* GNGNawaz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGNawaz.m; sourceTree = "<group>"; };
 		29C6985419DA63F00030A38D /* NawazAnimations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = NawazAnimations.plist; sourceTree = "<group>"; };
-		29C6987419DADCD10030A38D /* Nawaz.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Nawaz.atlas; sourceTree = "<group>"; };
-		29C6987719DADF750030A38D /* NawazPuffTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NawazPuffTrail.sks; sourceTree = "<group>"; };
-		29C6987819DADF750030A38D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		29C6987419DADCD10030A38D /* Graphics.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Graphics.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29B53E0B19DE5DAA008880B5 /* Particle Effects */ = {
+			isa = PBXGroup;
+			children = (
+				298EBB9919DE62F4001FE1DA /* spark.png */,
+			);
+			name = "Particle Effects";
+			sourceTree = "<group>";
+		};
 		29C6980319DA5ADA0030A38D = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +145,11 @@
 		29C6981719DA5ADA0030A38D /* Go Nawaz Go */ = {
 			isa = PBXGroup;
 			children = (
-				29C6987619DADE790030A38D /* Particale Effects */,
-				29C6987419DADCD10030A38D /* Nawaz.atlas */,
+				29B53E0B19DE5DAA008880B5 /* Particle Effects */,
+				29C6987419DADCD10030A38D /* Graphics.atlas */,
 				29C6985619DA6AC60030A38D /* Resources */,
+				29C1B38619E83C0900AF1274 /* GNGConstants.h */,
+				29C1B38719E83C0900AF1274 /* GNGConstants.m */,
 				29C6982019DA5ADA0030A38D /* GNGAppDelegate.h */,
 				29C6982119DA5ADA0030A38D /* GNGAppDelegate.m */,
 				29C6982319DA5ADA0030A38D /* Main.storyboard */,
@@ -142,6 +159,10 @@
 				29C6984C19DA5C810030A38D /* GNGGameScene.m */,
 				29C6985119DA601A0030A38D /* GNGNawaz.h */,
 				29C6985219DA601A0030A38D /* GNGNawaz.m */,
+				29C1B38319E7AFC000AF1274 /* GNGScrollingLayer.h */,
+				29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */,
+				29C1B38019E7ADD600AF1274 /* GNGScrollingNode.h */,
+				29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */,
 				29C6982E19DA5ADA0030A38D /* Images.xcassets */,
 				29C6981819DA5ADA0030A38D /* Supporting Files */,
 			);
@@ -183,15 +204,6 @@
 				29C6985419DA63F00030A38D /* NawazAnimations.plist */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		29C6987619DADE790030A38D /* Particale Effects */ = {
-			isa = PBXGroup;
-			children = (
-				29C6987719DADF750030A38D /* NawazPuffTrail.sks */,
-				29C6987819DADF750030A38D /* spark.png */,
-			);
-			name = "Particale Effects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C6981C19DA5ADA0030A38D /* InfoPlist.strings in Resources */,
-				29C6987919DADF750030A38D /* NawazPuffTrail.sks in Resources */,
-				29C6987519DADCD10030A38D /* Nawaz.atlas in Resources */,
-				29C6987A19DADF750030A38D /* spark.png in Resources */,
+				29C6987519DADCD10030A38D /* Graphics.atlas in Resources */,
+				298EBB9B19DE62F4001FE1DA /* spark.png in Resources */,
 				29C6985519DA63F00030A38D /* NawazAnimations.plist in Resources */,
 				29C6982F19DA5ADA0030A38D /* Images.xcassets in Resources */,
 				29C6982519DA5ADA0030A38D /* Main.storyboard in Resources */,
@@ -298,8 +309,11 @@
 			files = (
 				29C6982819DA5ADA0030A38D /* GNGViewController.m in Sources */,
 				29C6981E19DA5ADA0030A38D /* main.m in Sources */,
+				29C1B38819E83C0900AF1274 /* GNGConstants.m in Sources */,
 				29C6982219DA5ADA0030A38D /* GNGAppDelegate.m in Sources */,
+				29C1B38519E7AFC000AF1274 /* GNGScrollingLayer.m in Sources */,
 				29C6984D19DA5C810030A38D /* GNGGameScene.m in Sources */,
+				29C1B38219E7ADD600AF1274 /* GNGScrollingNode.m in Sources */,
 				29C6985319DA601A0030A38D /* GNGNawaz.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -414,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -431,6 +445,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -446,6 +461,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -509,6 +525,7 @@
 				29C6984719DA5ADB0030A38D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29C6984819DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Go Nawaz GoTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +534,7 @@
 				29C6984A19DA5ADB0030A38D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
