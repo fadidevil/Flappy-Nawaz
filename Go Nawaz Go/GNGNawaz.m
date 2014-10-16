@@ -54,7 +54,7 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
         self.physicsBody.mass = 0.039;
         
         self.physicsBody.categoryBitMask = kGNGCategoryNawaz;
-        self.physicsBody.categoryBitMask = kGNGCategoryGround;
+        self.physicsBody.contactTestBitMask = kGNGCategoryGround;
         
         
         _nawazAnimations = [[NSMutableArray alloc] init];

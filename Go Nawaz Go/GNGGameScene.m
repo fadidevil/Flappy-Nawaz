@@ -113,7 +113,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     
     
     sprite.physicsBody = [SKPhysicsBody bodyWithEdgeChainFromPath:path];
-    self.physicsBody.categoryBitMask = kGNGCategoryGround;
+    sprite.physicsBody.categoryBitMask = kGNGCategoryGround;
     
     return sprite;
 }
