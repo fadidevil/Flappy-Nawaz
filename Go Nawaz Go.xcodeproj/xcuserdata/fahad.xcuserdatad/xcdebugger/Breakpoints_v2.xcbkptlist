@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go Nawaz Go/GNGGameScene.m"
-            timestampString = "434652508.992185"
+            timestampString = "435658799.825328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "-initWithSize:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-generateGroundTile"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Go Nawaz Go/GNGNawaz.m"
-            timestampString = "434653881.212557"
+            timestampString = "435658799.825328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "-setRandomColour"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-collide:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
