@@ -12,7 +12,7 @@
 @interface GNGNawaz()
 @property (nonatomic) NSMutableArray *nawazAnimations;
 //@property (nonatomic) SKEmitterNode *puffTrailEmitter;
-@property (nonatomic) CGFloat puffTrailBirthRate;
+//@property (nonatomic) CGFloat puffTrailBirthRate;
 
 @end
 static NSString* const kKeyNawazAnimation = @"NawazAnimation";
