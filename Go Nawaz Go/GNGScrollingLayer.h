@@ -11,5 +11,6 @@
 @interface GNGScrollingLayer : GNGScrollingNode
 
 - (id)initWithTiles:(NSArray*)tileSpriteNode;
+-(void)layoutTiles;
 
 @end

@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 FahadMusafa. All rights reserved.
 //
 
-#import "GNGObstaclLayer.h"
+#import "GNGObstacleLayer.h"
 #import "GNGConstants.h"
 
-@interface GNGObstaclLayer()
+@interface GNGObstacleLayer()
 
 @property (nonatomic) CGFloat marker;
 
@@ -22,7 +22,19 @@ static NSString *const kGNGKeyMountainUp = @"MountainUp";
 static NSString *const kGNGKeyMountainDown = @"MountainDown";
 static const CGFloat kGNGSpaceBetweenObstacleSets = 180.0;
 
-@implementation GNGObstaclLayer
+@implementation GNGObstacleLayer
+
+-(void)reset
+{
+    // Loop through child nodes and reposition for reuse.
+    for (SKNode *node in self.children) {
+        node.position = CGPointMake(-1000, 0);
+    }
+    // Reposition marker.
+    if (self.scene) {
+        self.marker = self.scene.size.width + kGNGMarkerBuffer;
+    }
+}
 
 - (void)updateWithTimeElpased:(NSTimeInterval)timeElapsed
 {
@@ -61,6 +73,22 @@ static const CGFloat kGNGSpaceBetweenObstacleSets = 180.0;
     
     
     
+}
+-(SKSpriteNode*)getUnusedObjectForKey:(NSString*)key
+{
+    if (self.scene) {
+        // Get left edge of screen in local coordinates.
+        CGFloat leftEdgeInLocalCoords = [self.scene convertPoint:CGPointMake(-self.scene.size.width * self.scene.anchorPoint.x, 0) toNode:self].x;
+        // Try find object for key to the left of the screen.
+        for (SKSpriteNode* node in self.children) {
+            if (node.name == key && node.frame.origin.x + node.frame.size.width < leftEdgeInLocalCoords) {
+                // Return unused object.
+                return node;
+            }
+        }
+    }
+    // Couldn't find an unused node with key so create a new one.
+    return [self createObjectForKey:key];
 }
     
     

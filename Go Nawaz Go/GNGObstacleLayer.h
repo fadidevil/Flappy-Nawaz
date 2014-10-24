@@ -8,9 +8,11 @@
 
 #import "GNGScrollingNode.h"
 
-@interface GNGObstaclLayer : GNGScrollingNode
+@interface GNGObstacleLayer : GNGScrollingNode
 
 @property (nonatomic) CGFloat floor;
 @property (nonatomic) CGFloat ceiling;
+
+-(void)reset;
 
 @end

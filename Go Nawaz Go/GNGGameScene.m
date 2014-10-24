@@ -10,12 +10,14 @@
 #import "GNGNawaz.h"
 #import "GNGScrollingLayer.h"
 #import "GNGConstants.h"
+#import "GNGObstacleLayer.h"
 
 @interface GNGGameScene()
 
 @property (nonatomic) GNGNawaz *player;
 @property (nonatomic) SKNode *world;
 @property (nonatomic) GNGScrollingLayer *background;
+@property (nonatomic) GNGObstacleLayer *obstacles;
 @property (nonatomic) GNGScrollingLayer *foreground;
 
 @end
@@ -51,16 +53,23 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         }
         
         _background = [[GNGScrollingLayer alloc] initWithTiles:backgroundTiles];
-        _background.position = CGPointMake(0, 30);
-        _background.horizontalScrollSpeed = -60;
+    _background.horizontalScrollSpeed = -60;
         _background.scrolling = YES;
         [_world addChild:_background];
+        
+        // Setup obstacle layer.
+        _obstacles = [[GNGObstacleLayer alloc] init];
+        _obstacles.horizontalScrollSpeed = -80;
+        _obstacles.scrolling = YES;
+        _obstacles.floor = 0.0;
+        _obstacles.ceiling = self.size.height;
+        [_world addChild:_obstacles];
         
         // Setup foreground.
         _foreground = [[GNGScrollingLayer alloc] initWithTiles:@[[self generateGroundTile],
                                                                 [self generateGroundTile],
                                                                 [self generateGroundTile]]];
-        _foreground.position = CGPointZero;
+       
         _foreground.horizontalScrollSpeed = -80;
         _foreground.scrolling = YES;
         [_world addChild:_foreground];
@@ -69,8 +78,11 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _player = [[GNGNawaz alloc] init];
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
-        _player.engineRunning = YES;
-        [_world addChild:_player];
+    [_world addChild:_player];
+        
+        // Start a new game.
+        [self newGame];
+
         
     }
                 return self;
@@ -118,13 +130,41 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     return sprite;
 }
 
+-(void)newGame
+{
+//    ResetLayers
+    self.foreground.position = CGPointZero;
+    [self.foreground layoutTiles];
+    self.obstacles.position = CGPointZero;
+    [self.obstacles reset];
+    self.obstacles.scrolling = NO;
+    self.background.position = CGPointMake(0, 30);
+    [self.background layoutTiles];
+    
+    // Reset plane.
+    self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+    self.player.physicsBody.affectedByGravity = NO;
+    [self.player reset];
+
+
+}
+
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     for (UITouch *touch in touches) {
-         _player.physicsBody.affectedByGravity = YES;
-        self.player.accelerating = YES;
+        if (self.player.crashed) {
+            // Reset game.
+            [self newGame];
+        }
+        else{
+            _player.physicsBody.affectedByGravity = YES;
+            self.player.accelerating = YES;
+            self.obstacles.scrolling = YES;
+        }
     }
 }
+    
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -157,6 +197,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     if (!self.player.crashed) {
         [self.background updateWithTimeElpased:timeElapsed];
         [self.foreground updateWithTimeElpased:timeElapsed];
+        [self.obstacles updateWithTimeElpased:timeElapsed];
     }
 }
 

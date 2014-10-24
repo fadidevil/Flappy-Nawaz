@@ -81,6 +81,20 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
     }
     return self;
 }
+- (void)reset
+{
+    // Set plane's initial values.
+    self.crashed = NO;
+    self.engineRunning = YES;
+    self.physicsBody.velocity = CGVectorMake(0.0, 0.0);
+    self.zRotation = 0.0;
+    self.physicsBody.angularVelocity = 0.0;
+    
+}
+
+
+
+
 - (void)setEngineRunning:(BOOL)engineRunning
 {
     _engineRunning = engineRunning && !self.crashed;
@@ -161,6 +175,11 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
     if (self.accelerating) {
         [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
 }
+    if(!self.crashed)
+    {
+        self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), -400) / 400;
+    }
+
 }
 
 @end

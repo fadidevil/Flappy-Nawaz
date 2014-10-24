@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		297D05E819FA6ABA00AC99E6 /* GNGObstaclLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D05E719FA6ABA00AC99E6 /* GNGObstaclLayer.m */; };
+		297D05E819FA6ABA00AC99E6 /* GNGObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */; };
 		298EBB9B19DE62F4001FE1DA /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 298EBB9919DE62F4001FE1DA /* spark.png */; };
 		29C1B38219E7ADD600AF1274 /* GNGScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */; };
 		29C1B38519E7AFC000AF1274 /* GNGScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */; };
@@ -44,8 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		297D05E619FA6ABA00AC99E6 /* GNGObstaclLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGObstaclLayer.h; sourceTree = "<group>"; };
-		297D05E719FA6ABA00AC99E6 /* GNGObstaclLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGObstaclLayer.m; sourceTree = "<group>"; };
+		297D05E619FA6ABA00AC99E6 /* GNGObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGObstacleLayer.h; sourceTree = "<group>"; };
+		297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGObstacleLayer.m; sourceTree = "<group>"; };
 		298EBB9919DE62F4001FE1DA /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		29C1B38019E7ADD600AF1274 /* GNGScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGScrollingNode.h; sourceTree = "<group>"; };
 		29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGScrollingNode.m; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 				29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */,
 				29C1B38019E7ADD600AF1274 /* GNGScrollingNode.h */,
 				29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */,
-				297D05E619FA6ABA00AC99E6 /* GNGObstaclLayer.h */,
-				297D05E719FA6ABA00AC99E6 /* GNGObstaclLayer.m */,
+				297D05E619FA6ABA00AC99E6 /* GNGObstacleLayer.h */,
+				297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */,
 				29C6982E19DA5ADA0030A38D /* Images.xcassets */,
 				29C6981819DA5ADA0030A38D /* Supporting Files */,
 			);
@@ -314,7 +314,7 @@
 			files = (
 				29C6982819DA5ADA0030A38D /* GNGViewController.m in Sources */,
 				29C6981E19DA5ADA0030A38D /* main.m in Sources */,
-				297D05E819FA6ABA00AC99E6 /* GNGObstaclLayer.m in Sources */,
+				297D05E819FA6ABA00AC99E6 /* GNGObstacleLayer.m in Sources */,
 				29C1B38819E83C0900AF1274 /* GNGConstants.m in Sources */,
 				29C6982219DA5ADA0030A38D /* GNGAppDelegate.m in Sources */,
 				29C1B38519E7AFC000AF1274 /* GNGScrollingLayer.m in Sources */,
