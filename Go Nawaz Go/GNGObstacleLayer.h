@@ -7,8 +7,11 @@
 //
 
 #import "GNGScrollingNode.h"
+#import "GNGCollectable.h"
 
 @interface GNGObstacleLayer : GNGScrollingNode
+
+@property (nonatomic, weak) id<GNGCollectableDelegate> collectableDelegate;
 
 @property (nonatomic) CGFloat floor;
 @property (nonatomic) CGFloat ceiling;

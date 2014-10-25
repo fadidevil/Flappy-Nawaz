@@ -7,7 +7,8 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "GNGCollectable.h"
 
-@interface GNGGameScene : SKScene <SKPhysicsContactDelegate>
+@interface GNGGameScene : SKScene <SKPhysicsContactDelegate, GNGCollectableDelegate>
 
 @end

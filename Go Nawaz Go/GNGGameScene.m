@@ -11,6 +11,7 @@
 #import "GNGScrollingLayer.h"
 #import "GNGConstants.h"
 #import "GNGObstacleLayer.h"
+#import "GNGBitmapFontLabel.h"
 
 @interface GNGGameScene()
 
@@ -19,6 +20,9 @@
 @property (nonatomic) GNGScrollingLayer *background;
 @property (nonatomic) GNGObstacleLayer *obstacles;
 @property (nonatomic) GNGScrollingLayer *foreground;
+@property (nonatomic) GNGBitmapFontLabel *scoreLabel;
+@property (nonatomic) NSInteger score;
+
 
 @end
 static const CGFloat kMinFPS = 10.0 / 60.0;
@@ -38,7 +42,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         SKTextureAtlas *graphics = [SKTextureAtlas atlasNamed:@"Graphics"];
         
-        self.physicsWorld.gravity = CGVectorMake(0.0, -5.5);
+        self.physicsWorld.gravity = CGVectorMake(0.0, -4.0);
         self.physicsWorld.contactDelegate = self;
         
        
@@ -59,6 +63,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         
         // Setup obstacle layer.
         _obstacles = [[GNGObstacleLayer alloc] init];
+        _obstacles.collectableDelegate = self;
         _obstacles.horizontalScrollSpeed = -80;
         _obstacles.scrolling = YES;
         _obstacles.floor = 0.0;
@@ -79,6 +84,11 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
     [_world addChild:_player];
+        
+        // Setup score label.
+        _scoreLabel = [[GNGBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
+        _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100);
+        [self addChild:_scoreLabel];
         
         // Start a new game.
         [self newGame];
@@ -141,18 +151,31 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     self.background.position = CGPointMake(0, 30);
     [self.background layoutTiles];
     
+    // Reset score.
+    self.score = 0;
+    
     // Reset plane.
-    self.player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+    self.player.position = CGPointMake(self.size.width * 0.3, self.size.height * 0.5);
     self.player.physicsBody.affectedByGravity = NO;
     [self.player reset];
 
 
 }
 
+-(void)wasCollected:(GNGCollectable *)collectable
+{
+    self.score += collectable.pointValue * 5;
+}
+
+-(void)setScore:(NSInteger)score
+{
+    _score = score;
+    self.scoreLabel.text = [NSString stringWithFormat:@"%ld", (long)score];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
+
         if (self.player.crashed) {
             // Reset game.
             [self newGame];
@@ -165,7 +188,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
             self.obstacles.scrolling = YES;
         }
     }
-}
+
     
 
 

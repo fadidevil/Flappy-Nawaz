@@ -14,5 +14,7 @@ const uint32_t kGNGCategoryNawaz = 0x1 << 0;
 
 const uint32_t kGNGCategoryGround = 0x1 << 1;
 
+const uint32_t kGNGCategoryCollectable = 0x1 << 2;
+
 
 @end

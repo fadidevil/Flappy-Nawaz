@@ -17,10 +17,15 @@
 
 static const CGFloat kGNGMarkerBuffer = 200.0;
 static const CGFloat kGNGVerticalGap = 90.0;
+static const CGFloat kGNGSpaceBetweenObstacleSets = 180.0;
+static const int kGNGCollectableVerticalRange = 200.0;
+static const CGFloat kGNGCollectableClearance = 50.0;
+
 
 static NSString *const kGNGKeyMountainUp = @"MountainUp";
 static NSString *const kGNGKeyMountainDown = @"MountainDown";
-static const CGFloat kGNGSpaceBetweenObstacleSets = 180.0;
+static NSString *const kGNGKeyCollectableStar = @"CollectableStar";
+
 
 @implementation GNGObstacleLayer
 
@@ -63,6 +68,17 @@ static const CGFloat kGNGSpaceBetweenObstacleSets = 180.0;
 //    calculate Max vartiation
     CGFloat maxVariation = (mountainUp.size.height + mountainDown.size.height + kGNGVerticalGap) - (self.ceiling - self.floor);
     CGFloat yAdjustment = (CGFloat)arc4random_uniform(maxVariation);
+    
+    // Get collectable star node.
+    SKSpriteNode *collectable = [self getUnusedObjectForKey:kGNGKeyCollectableStar];
+    
+    // Position collectable.
+    CGFloat midPoint = mountainUp.position.y + (mountainUp.size.height * 0.5) + (kGNGVerticalGap * 0.5);
+    CGFloat yPosition = midPoint + arc4random_uniform(kGNGCollectableVerticalRange) - (kGNGCollectableVerticalRange * 0.5);
+    yPosition = fmaxf(yPosition, self.floor + kGNGCollectableClearance);
+    yPosition = fminf(yPosition, self.ceiling - kGNGCollectableClearance);
+    collectable.position = CGPointMake(self.marker + (kGNGSpaceBetweenObstacleSets * 0.5), yPosition);
+    
     
 //    mountain Postions
     mountainUp.position = CGPointMake(self.marker, self.floor + (mountainUp.size.height * 0.5) - yAdjustment);
@@ -142,6 +158,16 @@ static const CGFloat kGNGSpaceBetweenObstacleSets = 180.0;
         object.physicsBody.categoryBitMask = kGNGCategoryGround;
         
         
+        [self addChild:object];
+    }
+    else if (key == kGNGKeyCollectableStar) {
+        
+    object = [GNGCollectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
+        ((GNGCollectable*)object).pointValue = 1;
+        ((GNGCollectable*)object).delegate = self.collectableDelegate;
+        object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
+        object.physicsBody.categoryBitMask = kGNGCategoryCollectable;
+        object.physicsBody.dynamic = NO;
         [self addChild:object];
     }
 
