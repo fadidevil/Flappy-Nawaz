@@ -10,6 +10,7 @@
 		2955CC6319FD383E00A66997 /* TilesetGraphics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2955CC6219FD383E00A66997 /* TilesetGraphics.plist */; };
 		2955CC6619FD3D4500A66997 /* GNGTilesetTextureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2955CC6519FD3D4500A66997 /* GNGTilesetTextureProvider.m */; };
 		2955CC6919FD523D00A66997 /* GNGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2955CC6819FD523D00A66997 /* GNGButton.m */; };
+		2955CC6C19FD635700A66997 /* GNGGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2955CC6B19FD635700A66997 /* GNGGameOverMenu.m */; };
 		297D05E819FA6ABA00AC99E6 /* GNGObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */; };
 		2995002A19FB938300240625 /* GNGCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2995002919FB938300240625 /* GNGCollectable.m */; };
 		29C1B38219E7ADD600AF1274 /* GNGScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */; };
@@ -54,6 +55,8 @@
 		2955CC6519FD3D4500A66997 /* GNGTilesetTextureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGTilesetTextureProvider.m; sourceTree = "<group>"; };
 		2955CC6719FD523D00A66997 /* GNGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGButton.h; sourceTree = "<group>"; };
 		2955CC6819FD523D00A66997 /* GNGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGButton.m; sourceTree = "<group>"; };
+		2955CC6A19FD635700A66997 /* GNGGameOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGGameOverMenu.h; sourceTree = "<group>"; };
+		2955CC6B19FD635700A66997 /* GNGGameOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGGameOverMenu.m; sourceTree = "<group>"; };
 		297D05E619FA6ABA00AC99E6 /* GNGObstacleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGObstacleLayer.h; sourceTree = "<group>"; };
 		297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGObstacleLayer.m; sourceTree = "<group>"; };
 		2995002819FB938300240625 /* GNGCollectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGCollectable.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */,
 				2995002819FB938300240625 /* GNGCollectable.h */,
 				2995002919FB938300240625 /* GNGCollectable.m */,
+				2955CC6A19FD635700A66997 /* GNGGameOverMenu.h */,
+				2955CC6B19FD635700A66997 /* GNGGameOverMenu.m */,
 				29C6982E19DA5ADA0030A38D /* Images.xcassets */,
 				29C6981819DA5ADA0030A38D /* Supporting Files */,
 			);
@@ -341,6 +346,7 @@
 				29DD4DEB19FB8236008D8C24 /* GNGBitmapFontLabel.m in Sources */,
 				2955CC6919FD523D00A66997 /* GNGButton.m in Sources */,
 				29C6981E19DA5ADA0030A38D /* main.m in Sources */,
+				2955CC6C19FD635700A66997 /* GNGGameOverMenu.m in Sources */,
 				297D05E819FA6ABA00AC99E6 /* GNGObstacleLayer.m in Sources */,
 				29C1B38819E83C0900AF1274 /* GNGConstants.m in Sources */,
 				29C6982219DA5ADA0030A38D /* GNGAppDelegate.m in Sources */,

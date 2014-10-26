@@ -14,6 +14,7 @@
 #import "GNGBitmapFontLabel.h"
 #import "GNGTilesetTextureProvider.h"
 #import "GNGButton.h"
+#import "GNGGameOverMenu.h"
 
 @interface GNGGameScene()
 
@@ -24,6 +25,7 @@
 @property (nonatomic) GNGScrollingLayer *foreground;
 @property (nonatomic) GNGBitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
+@property (nonatomic) GNGGameOverMenu *gameOverMenu;
 
 
 @end
@@ -94,8 +96,10 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100);
         [self addChild:_scoreLabel];
         
-        
-        
+        // Setup game over menu.
+        _gameOverMenu = [[GNGGameOverMenu alloc] initWithSize:size];
+        [self addChild:_gameOverMenu];
+
         
         
         // Start a new game.
