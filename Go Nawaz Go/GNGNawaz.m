@@ -12,8 +12,8 @@
 
 @interface GNGNawaz()
 @property (nonatomic) NSMutableArray *nawazAnimations;
-@property (nonatomic) SKEmitterNode *puffTrailEmitter;
-@property (nonatomic) CGFloat puffTrailBirthRate;
+//@property (nonatomic) SKEmitterNode *puffTrailEmitter;
+//@property (nonatomic) CGFloat puffTrailBirthRate;
 
 @end
 static NSString* const kGNGKeyNawazAnimation = @"NawazAnimation";
@@ -73,12 +73,12 @@ static const CGFloat kGNGMaxAltitude = 300.0;
         }
         
         //puff trail
-         NSString *particleFile = [[NSBundle mainBundle] pathForResource:@"nawazPuffTrail" ofType:@"sks"];
+        /* NSString *particleFile = [[NSBundle mainBundle] pathForResource:@"nawazPuffTrail" ofType:@"sks"];
         _puffTrailEmitter = [NSKeyedUnarchiver unarchiveObjectWithFile:particleFile];
         _puffTrailEmitter.position = CGPointMake(-self.size.width * 0.5, -5);
         [self addChild:self.puffTrailEmitter];
         self.puffTrailBirthRate = _puffTrailEmitter.particleBirthRate;
-        self.puffTrailEmitter.particleBirthRate = 0;
+        self.puffTrailEmitter.particleBirthRate = 0; */
         
         [self setRandomColour];
     }
@@ -104,11 +104,11 @@ static const CGFloat kGNGMaxAltitude = 300.0;
     if (engineRunning) {
         [self actionForKey:kGNGKeyNawazAnimation].speed = 1;
         
-        self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
+        //self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     }
     else {
         [self actionForKey:kGNGKeyNawazAnimation].speed = 0;
-        self.puffTrailEmitter.particleBirthRate = 0;
+        //self.puffTrailEmitter.particleBirthRate = 0;
     }
 }
 

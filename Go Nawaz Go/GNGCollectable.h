@@ -11,7 +11,9 @@
 @class GNGCollectable;
 
 @protocol GNGCollectableDelegate <NSObject>
+
 -(void)wasCollected:(GNGCollectable*)collectable;
+
 @end
 
 @interface GNGCollectable : SKSpriteNode

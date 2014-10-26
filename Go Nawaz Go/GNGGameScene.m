@@ -12,6 +12,8 @@
 #import "GNGConstants.h"
 #import "GNGObstacleLayer.h"
 #import "GNGBitmapFontLabel.h"
+#import "GNGTilesetTextureProvider.h"
+#import "GNGButton.h"
 
 @interface GNGGameScene()
 
@@ -61,6 +63,8 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _background.scrolling = YES;
         [_world addChild:_background];
         
+    
+        
         // Setup obstacle layer.
         _obstacles = [[GNGObstacleLayer alloc] init];
         _obstacles.collectableDelegate = self;
@@ -89,6 +93,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _scoreLabel = [[GNGBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
         _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100);
         [self addChild:_scoreLabel];
+        
+        
+        // Setup test button.
+        GNGButton *button = [GNGButton spriteNodeWithTexture:[graphics textureNamed:@"buttonPlay"]];
+        button.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
+        [self addChild:button];
+        
         
         // Start a new game.
         [self newGame];
@@ -142,13 +153,20 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)newGame
 {
+    // Randomize tileset.
+    [[GNGTilesetTextureProvider getProvider] randomizeTileset];
+
+    
 //    ResetLayers
     self.foreground.position = CGPointZero;
+    for (SKSpriteNode *node in self.foreground.children) {
+        node.texture = [[GNGTilesetTextureProvider getProvider] getTextureForKey:@"ground"];
+    }
     [self.foreground layoutTiles];
     self.obstacles.position = CGPointZero;
     [self.obstacles reset];
     self.obstacles.scrolling = NO;
-    self.background.position = CGPointMake(0, 30);
+    self.background.position = CGPointZero;
     [self.background layoutTiles];
     
     // Reset score.
@@ -164,7 +182,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)wasCollected:(GNGCollectable *)collectable
 {
-    self.score += collectable.pointValue * 5;
+    self.score += collectable.pointValue * 1;
 }
 
 -(void)setScore:(NSInteger)score

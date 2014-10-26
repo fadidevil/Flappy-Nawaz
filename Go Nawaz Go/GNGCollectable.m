@@ -1,5 +1,5 @@
 //
-//  GNGCollectble.m
+//  GNGCollectable.m
 //  Go Nawaz Go
 //
 //  Created by Fahad Mustafa on 25/10/2014.

@@ -8,6 +8,7 @@
 
 #import "GNGObstacleLayer.h"
 #import "GNGConstants.h"
+#import "GNGTilesetTextureProvider.h"
 
 @interface GNGObstacleLayer()
 
@@ -31,9 +32,15 @@ static NSString *const kGNGKeyCollectableStar = @"CollectableStar";
 
 -(void)reset
 {
-    // Loop through child nodes and reposition for reuse.
+    // Loop through child nodes and reposition for reuse and Update texture
     for (SKNode *node in self.children) {
         node.position = CGPointMake(-1000, 0);
+        if (node.name == kGNGKeyMountainUp) {
+            ((SKSpriteNode*)node).texture = [[GNGTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"];
+        }
+        if (node.name == kGNGKeyMountainDown) {
+            ((SKSpriteNode*)node).texture = [[GNGTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"];
+        }
     }
     // Reposition marker.
     if (self.scene) {
@@ -117,7 +124,7 @@ static NSString *const kGNGKeyCollectableStar = @"CollectableStar";
     
     
     if (key == kGNGKeyMountainUp) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrass"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[GNGTilesetTextureProvider getProvider] getTextureForKey:@"mountainUp"]];
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
         
@@ -140,7 +147,7 @@ static NSString *const kGNGKeyCollectableStar = @"CollectableStar";
         
     }
     else if (key == kGNGKeyMountainDown) {
-        object = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"MountainGrassDown"]];
+        object = [SKSpriteNode spriteNodeWithTexture:[[GNGTilesetTextureProvider getProvider] getTextureForKey:@"mountainDown"]];
         
         CGFloat offsetX = object.frame.size.width * object.anchorPoint.x;
         CGFloat offsetY = object.frame.size.height * object.anchorPoint.y;
