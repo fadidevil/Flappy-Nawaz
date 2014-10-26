@@ -95,10 +95,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         [self addChild:_scoreLabel];
         
         
-        // Setup test button.
-        GNGButton *button = [GNGButton spriteNodeWithTexture:[graphics textureNamed:@"buttonPlay"]];
-        button.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
-        [self addChild:button];
+        
         
         
         // Start a new game.
@@ -109,6 +106,8 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
                 return self;
         
 }
+
+
 
 -(SKSpriteNode*)generateGroundTile
 {
