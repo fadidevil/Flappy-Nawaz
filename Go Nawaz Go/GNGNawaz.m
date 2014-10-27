@@ -16,8 +16,7 @@
 //@property (nonatomic) CGFloat puffTrailBirthRate;
 
 @end
-static NSString* const kGNGKeyNawazAnimation = @"NawazAnimation";
-static const CGFloat kGNGMaxAltitude = 300.0;
+static NSString* const kKeyNawazAnimation = @"NawazAnimation";
 
 
 @implementation GNGNawaz
@@ -102,12 +101,12 @@ static const CGFloat kGNGMaxAltitude = 300.0;
 {
     _engineRunning = engineRunning && !self.crashed;
     if (engineRunning) {
-        [self actionForKey:kGNGKeyNawazAnimation].speed = 1;
+        [self actionForKey:kKeyNawazAnimation].speed = 1;
         
         //self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     }
     else {
-        [self actionForKey:kGNGKeyNawazAnimation].speed = 0;
+        [self actionForKey:kKeyNawazAnimation].speed = 0;
         //self.puffTrailEmitter.particleBirthRate = 0;
     }
 }
@@ -119,32 +118,22 @@ static const CGFloat kGNGMaxAltitude = 300.0;
     _crashed = crashed;
     if (crashed) {
         self.engineRunning = NO;
+         self.accelerating = NO;
     
     }
 }
-- (void)flap
+- (void)setAccelerating:(BOOL)accelerating
 {
-    if (!self.crashed && self.position.y < kGNGMaxAltitude) {
-        // Make sure plane can't drop faster than -200.
-        if (self.physicsBody.velocity.dy < -200) {
-            self.physicsBody.velocity = CGVectorMake(0, -200);
-        }
-        [self.physicsBody applyImpulse:CGVectorMake(0.0, 20)];
-        // Make sure that the plane can't go up faster than 300.
-        if (self.physicsBody.velocity.dy > 300) {
-            self.physicsBody.velocity = CGVectorMake(0, 300);
-        }
-    }
+    _accelerating = accelerating && !self.crashed;
 }
-
 - (void)setRandomColour
 {
-    [self removeActionForKey:kGNGKeyNawazAnimation];
+    [self removeActionForKey:kKeyNawazAnimation];
     SKAction *animation = [self.nawazAnimations objectAtIndex:arc4random_uniform((uint)self.nawazAnimations.count)];
 
-    [self runAction:animation withKey:kGNGKeyNawazAnimation];
+    [self runAction:animation withKey:kKeyNawazAnimation];
     if (!self.engineRunning) {
-        [self actionForKey:kGNGKeyNawazAnimation].speed =0;
+        [self actionForKey:kKeyNawazAnimation].speed =0;
     }
 
 }
@@ -189,7 +178,10 @@ static const CGFloat kGNGMaxAltitude = 300.0;
 
 - (void)update
 {
-
+    if (self.accelerating) {
+        [self.physicsBody applyForce:CGVectorMake(0.0, 100)];
+    }
+    
     if(!self.crashed)
     {
         self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), -400) / 400;

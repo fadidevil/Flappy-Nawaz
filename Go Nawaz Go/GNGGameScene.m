@@ -203,14 +203,20 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         }
         else{
             
-            [_player flap];
-            _player.physicsBody.affectedByGravity = YES;
             
+            _player.physicsBody.affectedByGravity = YES;
+            self.player.accelerating = YES;
             self.obstacles.scrolling = YES;
         }
     }
 
+- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+
     
+        self.player.accelerating = NO;
+    
+}
 
 
 
