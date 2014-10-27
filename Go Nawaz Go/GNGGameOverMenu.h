@@ -14,6 +14,11 @@ typedef enum : NSUInteger {
     MedalSilver,
     MedalGold,
 } MedalType;
+@protocol GNGGameOverMenuDelegate <NSObject>
+
+-(void)pressedStartNewGameButton;
+
+@end
 
 @interface GNGGameOverMenu : SKNode
 
@@ -21,6 +26,9 @@ typedef enum : NSUInteger {
 @property (nonatomic) NSInteger score;
 @property (nonatomic) NSInteger bestScore;
 @property (nonatomic) MedalType medal;
+@property (nonatomic, weak) id<GNGGameOverMenuDelegate> delegate;
+
+
 -(instancetype)initWithSize:(CGSize)size;
 
 -(void)show;

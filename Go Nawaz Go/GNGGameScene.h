@@ -8,7 +8,8 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "GNGCollectable.h"
+#import "GNGGameOverMenu.h"
 
-@interface GNGGameScene : SKScene <SKPhysicsContactDelegate, GNGCollectableDelegate>
+@interface GNGGameScene : SKScene <SKPhysicsContactDelegate, GNGCollectableDelegate, GNGGameOverMenuDelegate>
 
 @end

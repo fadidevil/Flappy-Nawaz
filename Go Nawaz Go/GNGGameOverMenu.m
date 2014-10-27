@@ -114,7 +114,9 @@
 
 -(void)pressedPlayButton
 {
-    [self show];
+    if (self.delegate) {
+        [self.delegate pressedStartNewGameButton];
+    }
 }
 
 
