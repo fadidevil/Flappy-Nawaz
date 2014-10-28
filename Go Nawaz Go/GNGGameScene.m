@@ -13,6 +13,7 @@
 #import "GNGObstacleLayer.h"
 #import "GNGBitmapFontLabel.h"
 #import "GNGTilesetTextureProvider.h"
+#import "GNGGetReadyMenu.h"
 
 
 typedef enum : NSUInteger {
@@ -31,12 +32,15 @@ typedef enum : NSUInteger {
 @property (nonatomic) GNGScrollingLayer *foreground;
 @property (nonatomic) GNGBitmapFontLabel *scoreLabel;
 @property (nonatomic) NSInteger score;
+@property (nonatomic) NSInteger bestScore;
 @property (nonatomic) GNGGameOverMenu *gameOverMenu;
+@property (nonatomic) GNGGetReadyMenu *getReadyMenu;
 @property (nonatomic) GameState gameState;
 
 
 @end
 static const CGFloat kMinFPS = 10.0 / 60.0;
+static NSString *const kGNGKeyBestScore = @"BestScore";
 
 @implementation GNGGameScene
 
@@ -103,9 +107,19 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100);
         [self addChild:_scoreLabel];
         
+        // Load best score.
+        self.bestScore = [[NSUserDefaults standardUserDefaults] integerForKey:kGNGKeyBestScore];
+
+        
         // Setup game over menu.
+        
         _gameOverMenu = [[GNGGameOverMenu alloc] initWithSize:size];
         _gameOverMenu.delegate = self;
+        
+        // Setup get ready menu.
+        _getReadyMenu = [[GNGGetReadyMenu alloc] initWithSize:size andPlanePosition:CGPointMake(self.size.width * 0.3, self.size.height * 0.5)];
+        [self addChild:_getReadyMenu];
+
        
         // Start a new game.
         [self newGame];
@@ -161,8 +175,20 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 -(void)pressedStartNewGameButton
 {
-    [self newGame];
-    [self.gameOverMenu removeFromParent];
+    SKSpriteNode *blackRectangle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:self.size];
+    blackRectangle.anchorPoint = CGPointZero;
+    blackRectangle.alpha = 0.0;
+    [self addChild:blackRectangle];
+    SKAction *startNewGame = [SKAction runBlock:^{
+        [self newGame];
+        [self.gameOverMenu removeFromParent];
+            [self.getReadyMenu show];
+    }];
+    SKAction *fadeTransition = [SKAction sequence:@[[SKAction fadeInWithDuration:0.4],
+                                                    startNewGame,
+                                                    [SKAction fadeOutWithDuration:0.6],
+                                                    [SKAction removeFromParent]]];
+    [blackRectangle runAction:fadeTransition];
 }
 
 -(void)newGame
@@ -199,9 +225,32 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 
 }
 
+-(void)gameOver
+{
+//    Update Game State
+    self.gameState = GameOver;
+    
+    // Fade out score display.
+    [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
+    
+    // Properties on game over menu.
+    self.gameOverMenu.score = self.score;
+    self.gameOverMenu.medal = [self getMedalForCurrentScore];
+//    Updating best Score
+    if (self.score > self.bestScore) {
+        self.bestScore = self.score;
+        [[NSUserDefaults standardUserDefaults] setInteger:self.bestScore forKey:kGNGKeyBestScore];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    self.gameOverMenu.bestScore = self.bestScore;
+//    show Game over menu
+    [self addChild:self.gameOverMenu];
+    [self.gameOverMenu show];
+}
+
 -(void)wasCollected:(GNGCollectable *)collectable
 {
-    self.score += collectable.pointValue * 1;
+    self.score += collectable.pointValue;
 }
 
 -(void)setScore:(NSInteger)score
@@ -213,6 +262,7 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
         if (self.gameState == GameReady) {
+            [self.getReadyMenu hide];
         self.player.physicsBody.affectedByGravity = YES;
         self.obstacles.scrolling = YES;
         self.gameState = GameRunning;
@@ -242,6 +292,13 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     }
 }
 
+-(void)bump
+{
+    SKAction *bump = [SKAction sequence:@[[SKAction moveBy:CGVectorMake(-5, -4) duration:0.1],
+                                          [SKAction moveTo:CGPointZero duration:0.1]]];
+    [self.world runAction:bump];
+}
+
 - (void) update:(NSTimeInterval)currentTime
 {
     static NSTimeInterval lastCallTime;
@@ -254,15 +311,8 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
     if (self.gameState == GameRunning && self.player.crashed) {
         
         // Player just crashed in last frame so trigger game over.
-        self.gameState = GameOver;
-        
-        // Fade out score display.
-        [self.scoreLabel runAction:[SKAction fadeOutWithDuration:0.4]];
-        
-        // Show game over menu.
-        [self addChild:self.gameOverMenu];
-        
-        [self.gameOverMenu show];
+        [self bump];
+        [self gameOver];
     }
     
     [self.player update];
@@ -271,6 +321,18 @@ static const CGFloat kMinFPS = 10.0 / 60.0;
         [self.foreground updateWithTimeElpased:timeElapsed];
         [self.obstacles updateWithTimeElpased:timeElapsed];
     }
+}
+-(MedalType)getMedalForCurrentScore
+{
+    NSInteger adjustedScore = self.score - (self.bestScore / 5);
+    if (adjustedScore >= 45) {
+        return MedalGold;
+    } else if (adjustedScore >= 25) {
+        return MedalSilver;
+    } else if (adjustedScore >= 10) {
+        return MedalBronze;
+    }
+    return MedalNone;
 }
 
     @end

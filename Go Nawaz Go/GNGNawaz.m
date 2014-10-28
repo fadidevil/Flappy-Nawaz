@@ -12,8 +12,10 @@
 
 @interface GNGNawaz()
 @property (nonatomic) NSMutableArray *nawazAnimations;
-//@property (nonatomic) SKEmitterNode *puffTrailEmitter;
-//@property (nonatomic) CGFloat puffTrailBirthRate;
+@property (nonatomic) SKAction *crashTintAction;
+
+/*@property (nonatomic) SKEmitterNode *puffTrailEmitter;
+@property (nonatomic) CGFloat puffTrailBirthRate; */
 
 @end
 static NSString* const kKeyNawazAnimation = @"NawazAnimation";
@@ -78,6 +80,11 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
         [self addChild:self.puffTrailEmitter];
         self.puffTrailBirthRate = _puffTrailEmitter.particleBirthRate;
         self.puffTrailEmitter.particleBirthRate = 0; */
+        
+        // Setup action to tint plane when it crashes.
+        SKAction *tint = [SKAction colorizeWithColor:[SKColor redColor] colorBlendFactor:0.8 duration:0.0];
+        SKAction *removeTint = [SKAction colorizeWithColorBlendFactor:0.0 duration:0.2];
+        _crashTintAction = [SKAction sequence:@[tint, removeTint]];
         
         [self setRandomColour];
     }
@@ -144,6 +151,7 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
         if (body.categoryBitMask == kGNGCategoryGround) {
             
             self.crashed = YES;
+            [self runAction:self.crashTintAction];
        }
         if (body.categoryBitMask == kGNGCategoryCollectable) {
             if ([body.node respondsToSelector:@selector(collect)]) {
