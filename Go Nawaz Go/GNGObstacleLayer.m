@@ -9,6 +9,7 @@
 #import "GNGObstacleLayer.h"
 #import "GNGConstants.h"
 #import "GNGTilesetTextureProvider.h"
+#import "SoundManager.h"
 
 @interface GNGObstacleLayer()
 
@@ -172,6 +173,7 @@ static NSString *const kGNGKeyCollectableStar = @"CollectableStar";
     object = [GNGCollectable spriteNodeWithTexture:[atlas textureNamed:@"starGold"]];
         ((GNGCollectable*)object).pointValue = 1;
         ((GNGCollectable*)object).delegate = self.collectableDelegate;
+        ((GNGCollectable*)object).collectionSound = [Sound soundNamed:@"Collect.caf"];
         object.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:object.size.width * 0.3];
         object.physicsBody.categoryBitMask = kGNGCategoryCollectable;
         object.physicsBody.dynamic = NO;

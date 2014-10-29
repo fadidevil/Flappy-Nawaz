@@ -7,6 +7,7 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import "SoundManager.h"
 
 @class GNGCollectable;
 
@@ -18,6 +19,7 @@
 
 @interface GNGCollectable : SKSpriteNode
 
+@property (nonatomic) Sound *collectionSound;
 @property (nonatomic, weak) id<GNGCollectableDelegate> delegate;
 @property (nonatomic) NSInteger pointValue;
 

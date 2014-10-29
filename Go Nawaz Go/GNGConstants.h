@@ -14,4 +14,9 @@ extern const uint32_t kGNGCategoryNawaz;
 extern const uint32_t kGNGCategoryGround;
 extern const uint32_t kGNGCategoryCollectable;
 
+extern NSString *const kGNGTilesetGrass;
+extern NSString *const kGNGTilesetDirt;
+extern NSString *const kGNGTilesetIce;
+extern NSString *const kGNGTilesetSnow;
+
 @end

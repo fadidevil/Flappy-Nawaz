@@ -9,10 +9,12 @@
 #import "GNGNawaz.h"
 #import "GNGConstants.h"
 #import "GNGCollectable.h"
+#import "SoundManager.h"
 
 @interface GNGNawaz()
 @property (nonatomic) NSMutableArray *nawazAnimations;
 @property (nonatomic) SKAction *crashTintAction;
+@property (nonatomic) Sound *engineSound;
 
 /*@property (nonatomic) SKEmitterNode *puffTrailEmitter;
 @property (nonatomic) CGFloat puffTrailBirthRate; */
@@ -86,6 +88,10 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
         SKAction *removeTint = [SKAction colorizeWithColorBlendFactor:0.0 duration:0.2];
         _crashTintAction = [SKAction sequence:@[tint, removeTint]];
         
+        // Setup engine sound.
+        _engineSound = [Sound soundNamed:@"Engine.caf"];
+        _engineSound.looping = YES;
+        
         [self setRandomColour];
     }
     return self;
@@ -108,11 +114,14 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
 {
     _engineRunning = engineRunning && !self.crashed;
     if (engineRunning) {
+        [self.engineSound play];
+        [self.engineSound fadeIn:1.0];
+        //self.puffTrailEmitter.targetNode = self.parent;
         [self actionForKey:kKeyNawazAnimation].speed = 1;
-        
         //self.puffTrailEmitter.particleBirthRate = self.puffTrailBirthRate;
     }
     else {
+        [self.engineSound fadeOut:0.5];
         [self actionForKey:kKeyNawazAnimation].speed = 0;
         //self.puffTrailEmitter.particleBirthRate = 0;
     }
@@ -152,6 +161,7 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
             
             self.crashed = YES;
             [self runAction:self.crashTintAction];
+            [[SoundManager sharedManager] playSound:@"Crunch.caf"];
        }
         if (body.categoryBitMask == kGNGCategoryCollectable) {
             if ([body.node respondsToSelector:@selector(collect)]) {
@@ -193,6 +203,7 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
     if(!self.crashed)
     {
         self.zRotation = fmaxf(fminf(self.physicsBody.velocity.dy, 400), -400) / 400;
+        self.engineSound.volume = 0.25 + fmaxf(fminf(self.physicsBody.velocity.dy, 300), 0) / 300 * 0.75;
     }
 
 }

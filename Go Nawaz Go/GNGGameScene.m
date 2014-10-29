@@ -14,6 +14,8 @@
 #import "GNGBitmapFontLabel.h"
 #import "GNGTilesetTextureProvider.h"
 #import "GNGGetReadyMenu.h"
+#import "GNGWeatherLayer.h"
+#include "SoundManager.h"
 
 
 typedef enum : NSUInteger {
@@ -36,6 +38,7 @@ typedef enum : NSUInteger {
 @property (nonatomic) GNGGameOverMenu *gameOverMenu;
 @property (nonatomic) GNGGetReadyMenu *getReadyMenu;
 @property (nonatomic) GameState gameState;
+@property (nonatomic) GNGWeatherLayer *weather;
 
 
 @end
@@ -50,6 +53,9 @@ static NSString *const kGNGKeyBestScore = @"BestScore";
 //    Get Atlas File
     
     if (self = [super initWithSize:size]) {
+        
+//        Audio Crunch
+        [[SoundManager sharedManager] prepareToPlayWithSound:@"Crunch.caf"];
         
         //    background color
         self.backgroundColor = [SKColor colorWithRed:0.835294118 green:0.929411765 blue:0.968627451 alpha:1.0];
@@ -101,6 +107,10 @@ static NSString *const kGNGKeyBestScore = @"BestScore";
         _player.position = CGPointMake(self.size.width * 0.5, self.size.height * 0.5);
         _player.physicsBody.affectedByGravity = NO;
     [_world addChild:_player];
+        
+        // Setup weather.
+        _weather = [[GNGWeatherLayer alloc] initWithSize:self.size];
+        [_world addChild:_weather];
         
         // Setup score label.
         _scoreLabel = [[GNGBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
@@ -196,6 +206,21 @@ static NSString *const kGNGKeyBestScore = @"BestScore";
     // Randomize tileset.
     [[GNGTilesetTextureProvider getProvider] randomizeTileset];
 
+    // Set weather conditions.
+    NSString *tilesetName = [GNGTilesetTextureProvider getProvider].currentTilesetName;
+    self.weather.conditions = WeatherClear;
+    if ([tilesetName isEqualToString:kGNGTilesetIce] || [tilesetName isEqualToString:kGNGTilesetSnow]) {
+        // 1 in 2 chance for snow on snow and ice tilesets.
+        if (arc4random_uniform(2) == 0) {
+            self.weather.conditions = WeatherSnowing;
+        }
+    }
+    if ([tilesetName isEqualToString:kGNGTilesetGrass] || [tilesetName isEqualToString:kGNGTilesetDirt]) {
+        // 1 in 3 chance for rain on dirt and grass tilesets.
+        if (arc4random_uniform(3) == 0) {
+            self.weather.conditions = WeatherRaining;
+        }
+    }
     
 //    ResetLayers
     self.foreground.position = CGPointZero;

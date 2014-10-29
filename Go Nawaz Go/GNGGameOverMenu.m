@@ -9,6 +9,7 @@
 #import "GNGGameOverMenu.h"
 #import "GNGBitmapFontLabel.h"
 #import "GNGButton.h"
+#import "SoundManager.h"
 
 @interface GNGGameOverMenu()
 
@@ -16,6 +17,8 @@
 @property (nonatomic) GNGBitmapFontLabel *scoreText;
 @property (nonatomic) GNGBitmapFontLabel *bestScoreText;
 @property (nonatomic) SKSpriteNode *gameOverTitle;
+@property (nonatomic) GNGButton *playButton;
+@property (nonatomic) SKNode *panelGroup;
 
 
 
@@ -37,8 +40,8 @@
         [self addChild:_gameOverTitle];
 
         
-        SKNode *panelGroup = [SKNode node];
-        [self addChild:panelGroup];
+        _panelGroup = [SKNode node];
+        [self addChild:_panelGroup];
 
         
         SKSpriteNode *panelBackground = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"UIbg"]];
@@ -49,20 +52,20 @@
                                                 (panelBackground.size.height - 20) / panelBackground.size.height);
         panelBackground.xScale = 175.0 / panelBackground.size.width;
         panelBackground.yScale = 115.0 / panelBackground.size.height;
-        [panelGroup addChild:panelBackground];
+        [self.panelGroup addChild:panelBackground];
         
         // Setup score title.
         SKSpriteNode *scoreTitle = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"textScore"]];
         scoreTitle.anchorPoint = CGPointMake(1.0, 1.0);
         scoreTitle.position = CGPointMake(CGRectGetMaxX(panelBackground.frame) - 20, CGRectGetMaxY(panelBackground.frame) - 10);
-        [panelGroup addChild:scoreTitle];
+        [self.panelGroup addChild:scoreTitle];
         
         // Setup score text label.
         _scoreText = [[GNGBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
         _scoreText.alignment = BitmapFontAlignmentRight;
         _scoreText.position = CGPointMake(CGRectGetMaxX(scoreTitle.frame), CGRectGetMinY(scoreTitle.frame) - 15);
         [_scoreText setScale:0.5];
-        [panelGroup addChild:_scoreText];
+        [self.panelGroup addChild:_scoreText];
         
         
         
@@ -70,21 +73,21 @@
         SKSpriteNode *bestTitle = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"textBest"]];
         bestTitle.anchorPoint = CGPointMake(1.0, 1.0);
         bestTitle.position = CGPointMake(CGRectGetMaxX(panelBackground.frame) - 20, CGRectGetMaxY(panelBackground.frame) - 60);
-        [panelGroup addChild:bestTitle];
+        [self.panelGroup addChild:bestTitle];
         
         // Setup best score text label.
         _bestScoreText = [[GNGBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
         _bestScoreText.alignment = BitmapFontAlignmentRight;
         _bestScoreText.position = CGPointMake(CGRectGetMaxX(bestTitle.frame), CGRectGetMinY(bestTitle.frame) - 15);
         [_bestScoreText setScale:0.5];
-        [panelGroup addChild:_bestScoreText];
+        [self.panelGroup addChild:_bestScoreText];
         
         
         // Setup medal title.
         SKSpriteNode *medalTitle = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"textMedal"]];
         medalTitle.anchorPoint = CGPointMake(0.0, 1.0);
         medalTitle.position = CGPointMake(CGRectGetMinX(panelBackground.frame) + 20, CGRectGetMaxY(panelBackground.frame) - 10);
-        [panelGroup addChild:medalTitle];
+        [self.panelGroup addChild:medalTitle];
         
         
         
@@ -92,13 +95,14 @@
         _medalDisplay = [SKSpriteNode spriteNodeWithTexture:[atlas textureNamed:@"medalBlank"]];
         _medalDisplay.anchorPoint = CGPointMake(0.5, 1.0);
         _medalDisplay.position = CGPointMake(CGRectGetMidX(medalTitle.frame), CGRectGetMinY(medalTitle.frame) - 15);
-        [panelGroup addChild:_medalDisplay];
+        [self.panelGroup addChild:_medalDisplay];
         
         // Setup play button.
-        GNGButton *playButton = [GNGButton spriteNodeWithTexture:[atlas textureNamed:@"buttonPlay"]];
-        playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
-        [playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
-        [self addChild:playButton];
+        _playButton = [GNGButton spriteNodeWithTexture:[atlas textureNamed:@"buttonPlay"]];
+         _playButton.pressedSound = [Sound soundNamed:@"Click.caf"];
+        _playButton.position = CGPointMake(CGRectGetMidX(panelBackground.frame), CGRectGetMinY(panelBackground.frame) - 25);
+        [_playButton setPressedTarget:self withAction:@selector(pressedPlayButton)];
+        [self addChild:_playButton];
 
         
         // Set initial values.

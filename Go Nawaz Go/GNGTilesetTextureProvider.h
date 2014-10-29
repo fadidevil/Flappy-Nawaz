@@ -11,6 +11,8 @@
 
 @interface GNGTilesetTextureProvider : NSObject
 
+@property (nonatomic) NSString *currentTilesetName;
+
 +(instancetype)getProvider;
 -(void)randomizeTileset;
 -(SKTexture*)getTextureForKey:(NSString*)key;
