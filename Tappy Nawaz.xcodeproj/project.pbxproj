@@ -77,24 +77,24 @@
 		29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGScrollingLayer.m; sourceTree = "<group>"; };
 		29C1B38619E83C0900AF1274 /* GNGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGConstants.h; sourceTree = "<group>"; };
 		29C1B38719E83C0900AF1274 /* GNGConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGConstants.m; sourceTree = "<group>"; };
-		29C6980C19DA5ADA0030A38D /* Go Nawaz Go.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go Nawaz Go.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C6980C19DA5ADA0030A38D /* Tappy Nawaz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Nawaz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C6980F19DA5ADA0030A38D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29C6981119DA5ADA0030A38D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29C6981319DA5ADA0030A38D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29C6981519DA5ADA0030A38D /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		29C6981919DA5ADA0030A38D /* Go Nawaz Go-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Go Nawaz Go-Info.plist"; sourceTree = "<group>"; };
+		29C6981919DA5ADA0030A38D /* Tappy Nawaz-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tappy Nawaz-Info.plist"; sourceTree = "<group>"; };
 		29C6981B19DA5ADA0030A38D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29C6981D19DA5ADA0030A38D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29C6981F19DA5ADA0030A38D /* Go Nawaz Go-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Go Nawaz Go-Prefix.pch"; sourceTree = "<group>"; };
+		29C6981F19DA5ADA0030A38D /* Tappy Nawaz-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tappy Nawaz-Prefix.pch"; sourceTree = "<group>"; };
 		29C6982019DA5ADA0030A38D /* GNGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNGAppDelegate.h; sourceTree = "<group>"; };
 		29C6982119DA5ADA0030A38D /* GNGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNGAppDelegate.m; sourceTree = "<group>"; };
 		29C6982419DA5ADA0030A38D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29C6982619DA5ADA0030A38D /* GNGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNGViewController.h; sourceTree = "<group>"; };
 		29C6982719DA5ADA0030A38D /* GNGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNGViewController.m; sourceTree = "<group>"; };
 		29C6982E19DA5ADA0030A38D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		29C6983419DA5ADA0030A38D /* Go Nawaz GoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Go Nawaz GoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29C6983419DA5ADA0030A38D /* Tappy NawazTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tappy NawazTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C6983519DA5ADA0030A38D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		29C6983D19DA5ADB0030A38D /* Go Nawaz GoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Go Nawaz GoTests-Info.plist"; sourceTree = "<group>"; };
+		29C6983D19DA5ADB0030A38D /* Tappy NawazTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tappy NawazTests-Info.plist"; sourceTree = "<group>"; };
 		29C6983F19DA5ADB0030A38D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29C6984119DA5ADB0030A38D /* Go_Nawaz_GoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Go_Nawaz_GoTests.m; sourceTree = "<group>"; };
 		29C6984B19DA5C810030A38D /* GNGGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGGameScene.h; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 		29C6980D19DA5ADA0030A38D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29C6980C19DA5ADA0030A38D /* Go Nawaz Go.app */,
-				29C6983419DA5ADA0030A38D /* Go Nawaz GoTests.xctest */,
+				29C6980C19DA5ADA0030A38D /* Tappy Nawaz.app */,
+				29C6983419DA5ADA0030A38D /* Tappy NawazTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -226,10 +226,10 @@
 		29C6981819DA5ADA0030A38D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				29C6981919DA5ADA0030A38D /* Go Nawaz Go-Info.plist */,
+				29C6981919DA5ADA0030A38D /* Tappy Nawaz-Info.plist */,
 				29C6981A19DA5ADA0030A38D /* InfoPlist.strings */,
 				29C6981D19DA5ADA0030A38D /* main.m */,
-				29C6981F19DA5ADA0030A38D /* Go Nawaz Go-Prefix.pch */,
+				29C6981F19DA5ADA0030A38D /* Tappy Nawaz-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 		29C6983C19DA5ADB0030A38D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				29C6983D19DA5ADB0030A38D /* Go Nawaz GoTests-Info.plist */,
+				29C6983D19DA5ADB0030A38D /* Tappy NawazTests-Info.plist */,
 				29C6983E19DA5ADB0030A38D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -286,9 +286,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29C6980B19DA5ADA0030A38D /* Go Nawaz Go */ = {
+		29C6980B19DA5ADA0030A38D /* Tappy Nawaz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C6984519DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Go Nawaz Go" */;
+			buildConfigurationList = 29C6984519DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Tappy Nawaz" */;
 			buildPhases = (
 				29C6980819DA5ADA0030A38D /* Sources */,
 				29C6980919DA5ADA0030A38D /* Frameworks */,
@@ -298,14 +298,14 @@
 			);
 			dependencies = (
 			);
-			name = "Go Nawaz Go";
+			name = "Tappy Nawaz";
 			productName = "Go Nawaz Go";
-			productReference = 29C6980C19DA5ADA0030A38D /* Go Nawaz Go.app */;
+			productReference = 29C6980C19DA5ADA0030A38D /* Tappy Nawaz.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29C6983319DA5ADA0030A38D /* Go Nawaz GoTests */ = {
+		29C6983319DA5ADA0030A38D /* Tappy NawazTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29C6984819DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Go Nawaz GoTests" */;
+			buildConfigurationList = 29C6984819DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Tappy NawazTests" */;
 			buildPhases = (
 				29C6983019DA5ADA0030A38D /* Sources */,
 				29C6983119DA5ADA0030A38D /* Frameworks */,
@@ -316,9 +316,9 @@
 			dependencies = (
 				29C6983A19DA5ADB0030A38D /* PBXTargetDependency */,
 			);
-			name = "Go Nawaz GoTests";
+			name = "Tappy NawazTests";
 			productName = "Go Nawaz GoTests";
-			productReference = 29C6983419DA5ADA0030A38D /* Go Nawaz GoTests.xctest */;
+			productReference = 29C6983419DA5ADA0030A38D /* Tappy NawazTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -336,7 +336,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 29C6980719DA5ADA0030A38D /* Build configuration list for PBXProject "Go Nawaz Go" */;
+			buildConfigurationList = 29C6980719DA5ADA0030A38D /* Build configuration list for PBXProject "Tappy Nawaz" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -349,8 +349,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29C6980B19DA5ADA0030A38D /* Go Nawaz Go */,
-				29C6983319DA5ADA0030A38D /* Go Nawaz GoTests */,
+				29C6980B19DA5ADA0030A38D /* Tappy Nawaz */,
+				29C6983319DA5ADA0030A38D /* Tappy NawazTests */,
 			);
 		};
 /* End PBXProject section */
@@ -425,7 +425,7 @@
 /* Begin PBXTargetDependency section */
 		29C6983A19DA5ADB0030A38D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 29C6980B19DA5ADA0030A38D /* Go Nawaz Go */;
+			target = 29C6980B19DA5ADA0030A38D /* Tappy Nawaz */;
 			targetProxy = 29C6983919DA5ADB0030A38D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -534,10 +534,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Go Nawaz Go/Go Nawaz Go-Prefix.pch";
-				INFOPLIST_FILE = "Go Nawaz Go/Go Nawaz Go-Info.plist";
+				GCC_PREFIX_HEADER = "Go Nawaz Go/Tappy Nawaz-Prefix.pch";
+				INFOPLIST_FILE = "Go Nawaz Go/Tappy Nawaz-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tappy Nawaz";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -550,10 +550,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Go Nawaz Go/Go Nawaz Go-Prefix.pch";
-				INFOPLIST_FILE = "Go Nawaz Go/Go Nawaz Go-Info.plist";
+				GCC_PREFIX_HEADER = "Go Nawaz Go/Tappy Nawaz-Prefix.pch";
+				INFOPLIST_FILE = "Go Nawaz Go/Tappy Nawaz-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tappy Nawaz";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -575,8 +575,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Go Nawaz GoTests/Go Nawaz GoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Go Nawaz GoTests/Tappy NawazTests-Info.plist";
+				PRODUCT_NAME = "Tappy NawazTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -593,8 +593,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Nawaz Go/Go Nawaz Go-Prefix.pch";
-				INFOPLIST_FILE = "Go Nawaz GoTests/Go Nawaz GoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Go Nawaz GoTests/Tappy NawazTests-Info.plist";
+				PRODUCT_NAME = "Tappy NawazTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -603,7 +603,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29C6980719DA5ADA0030A38D /* Build configuration list for PBXProject "Go Nawaz Go" */ = {
+		29C6980719DA5ADA0030A38D /* Build configuration list for PBXProject "Tappy Nawaz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C6984319DA5ADB0030A38D /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C6984519DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Go Nawaz Go" */ = {
+		29C6984519DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Tappy Nawaz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C6984619DA5ADB0030A38D /* Debug */,
@@ -621,7 +621,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29C6984819DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Go Nawaz GoTests" */ = {
+		29C6984819DA5ADB0030A38D /* Build configuration list for PBXNativeTarget "Tappy NawazTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				29C6984919DA5ADB0030A38D /* Debug */,

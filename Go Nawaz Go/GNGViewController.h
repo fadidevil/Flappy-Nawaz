@@ -1,6 +1,6 @@
 //
 //  GNGViewController.h
-//  Go Nawaz Go
+//  Tappy Nawaz
 //
 
 //  Copyright (c) 2014 FahadMusafa. All rights reserved.

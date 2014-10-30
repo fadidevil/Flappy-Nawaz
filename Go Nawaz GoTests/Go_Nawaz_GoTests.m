@@ -1,6 +1,6 @@
 //
 //  Go_Nawaz_GoTests.m
-//  Go Nawaz GoTests
+//  Tappy NawazTests
 //
 //  Created by Fahad Mustafa on 30/09/2014.
 //  Copyright (c) 2014 FahadMusafa. All rights reserved.

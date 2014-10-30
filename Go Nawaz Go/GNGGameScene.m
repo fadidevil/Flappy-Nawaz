@@ -1,6 +1,6 @@
 //
 //  GNGGameScene.m
-//  Go Nawaz Go
+//  Tappy Nawaz
 //
 //  Created by Fahad Mustafa on 30/09/2014.
 //  Copyright (c) 2014 FahadMusafa. All rights reserved.

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E104CFD4-57D6-4718-AF73-B93F05E215D9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Tappy Nawaz</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EC5412092C0C8D16707A22253C8AF33B4A39C4C5</key>
+		<string>https://github.com/fadidevil/Flappy-Nawaz.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Tappy Nawaz.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EC5412092C0C8D16707A22253C8AF33B4A39C4C5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fadidevil/Flappy-Nawaz.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EC5412092C0C8D16707A22253C8AF33B4A39C4C5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EC5412092C0C8D16707A22253C8AF33B4A39C4C5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Go%20Nawaz%20Go</string>
+		</dict>
+	</array>
+</dict>
+</plist>

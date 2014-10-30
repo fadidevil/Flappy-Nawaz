@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "29C6980B19DA5ADA0030A38D"
-               BuildableName = "Go Nawaz Go.app"
-               BlueprintName = "Go Nawaz Go"
-               ReferencedContainer = "container:Go Nawaz Go.xcodeproj">
+               BuildableName = "Tappy Nawaz.app"
+               BlueprintName = "Tappy Nawaz"
+               ReferencedContainer = "container:Tappy Nawaz.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "29C6983319DA5ADA0030A38D"
-               BuildableName = "Go Nawaz GoTests.xctest"
-               BlueprintName = "Go Nawaz GoTests"
-               ReferencedContainer = "container:Go Nawaz Go.xcodeproj">
+               BuildableName = "Tappy NawazTests.xctest"
+               BlueprintName = "Tappy NawazTests"
+               ReferencedContainer = "container:Tappy Nawaz.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29C6980B19DA5ADA0030A38D"
-            BuildableName = "Go Nawaz Go.app"
-            BlueprintName = "Go Nawaz Go"
-            ReferencedContainer = "container:Go Nawaz Go.xcodeproj">
+            BuildableName = "Tappy Nawaz.app"
+            BlueprintName = "Tappy Nawaz"
+            ReferencedContainer = "container:Tappy Nawaz.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29C6980B19DA5ADA0030A38D"
-            BuildableName = "Go Nawaz Go.app"
-            BlueprintName = "Go Nawaz Go"
-            ReferencedContainer = "container:Go Nawaz Go.xcodeproj">
+            BuildableName = "Tappy Nawaz.app"
+            BlueprintName = "Tappy Nawaz"
+            ReferencedContainer = "container:Tappy Nawaz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "29C6980B19DA5ADA0030A38D"
-            BuildableName = "Go Nawaz Go.app"
-            BlueprintName = "Go Nawaz Go"
-            ReferencedContainer = "container:Go Nawaz Go.xcodeproj">
+            BuildableName = "Tappy Nawaz.app"
+            BlueprintName = "Tappy Nawaz"
+            ReferencedContainer = "container:Tappy Nawaz.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

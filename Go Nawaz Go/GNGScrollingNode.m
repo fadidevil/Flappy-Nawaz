@@ -1,6 +1,6 @@
 //
 //  GNGScrollingNode.m
-//  Go Nawaz Go
+//  Tappy Nawaz
 //
 //  Created by Fahad Mustafa on 10/10/2014.
 //  Copyright (c) 2014 FahadMusafa. All rights reserved.
