@@ -114,7 +114,7 @@ static NSString *const kGNGKeyBestScore = @"BestScore";
         
         // Setup score label.
         _scoreLabel = [[GNGBitmapFontLabel alloc] initWithText:@"0" andFontName:@"number"];
-        _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 100);
+        _scoreLabel.position = CGPointMake(self.size.width * 0.5, self.size.height - 50);
         [self addChild:_scoreLabel];
         
         // Load best score.
