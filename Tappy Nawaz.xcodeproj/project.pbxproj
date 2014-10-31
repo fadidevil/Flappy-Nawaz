@@ -13,6 +13,8 @@
 		2955CC6C19FD635700A66997 /* GNGGameOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 2955CC6B19FD635700A66997 /* GNGGameOverMenu.m */; };
 		297D05E819FA6ABA00AC99E6 /* GNGObstacleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */; };
 		2995002A19FB938300240625 /* GNGCollectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 2995002919FB938300240625 /* GNGCollectable.m */; };
+		29B7CC821A0349CC00A57A77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29B7CC811A0349CC00A57A77 /* LaunchScreen.xib */; };
+		29B7CC841A034A2100A57A77 /* LauncScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B7CC831A034A2100A57A77 /* LauncScreen.png */; };
 		29C1B38219E7ADD600AF1274 /* GNGScrollingNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */; };
 		29C1B38519E7AFC000AF1274 /* GNGScrollingLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38419E7AFC000AF1274 /* GNGScrollingLayer.m */; };
 		29C1B38819E83C0900AF1274 /* GNGConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C1B38719E83C0900AF1274 /* GNGConstants.m */; };
@@ -71,6 +73,8 @@
 		297D05E719FA6ABA00AC99E6 /* GNGObstacleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGObstacleLayer.m; sourceTree = "<group>"; };
 		2995002819FB938300240625 /* GNGCollectable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGCollectable.h; sourceTree = "<group>"; };
 		2995002919FB938300240625 /* GNGCollectable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGCollectable.m; sourceTree = "<group>"; };
+		29B7CC811A0349CC00A57A77 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		29B7CC831A034A2100A57A77 /* LauncScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LauncScreen.png; sourceTree = "<group>"; };
 		29C1B38019E7ADD600AF1274 /* GNGScrollingNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGScrollingNode.h; sourceTree = "<group>"; };
 		29C1B38119E7ADD600AF1274 /* GNGScrollingNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GNGScrollingNode.m; sourceTree = "<group>"; };
 		29C1B38319E7AFC000AF1274 /* GNGScrollingLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GNGScrollingLayer.h; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				29DBD22619FF40C100B4CF6D /* GNGGetReadyMenu.m */,
 				29DF572E1A01449300668754 /* SoundManager.h */,
 				29DF572F1A01449300668754 /* SoundManager.m */,
+				29B7CC811A0349CC00A57A77 /* LaunchScreen.xib */,
 				29C6982E19DA5ADA0030A38D /* Images.xcassets */,
 				29C6981819DA5ADA0030A38D /* Supporting Files */,
 			);
@@ -264,6 +269,7 @@
 		29DD4DE519FB72B5008D8C24 /* Particle Effect */ = {
 			isa = PBXGroup;
 			children = (
+				29B7CC831A034A2100A57A77 /* LauncScreen.png */,
 				29DD4DE219FB72AD008D8C24 /* spark.png */,
 				29DBD22819FFF89B00B4CF6D /* SnowEffect.sks */,
 				29DBD22A19FFFB8800B4CF6D /* RainEffect.sks */,
@@ -365,11 +371,13 @@
 				29DF57421A01463300668754 /* Click.caf in Resources */,
 				29DBD22919FFF89B00B4CF6D /* SnowEffect.sks in Resources */,
 				29DF57461A01463300668754 /* Rain.caf in Resources */,
+				29B7CC841A034A2100A57A77 /* LauncScreen.png in Resources */,
 				29DBD22B19FFFB8800B4CF6D /* RainEffect.sks in Resources */,
 				29C6981C19DA5ADA0030A38D /* InfoPlist.strings in Resources */,
 				29DF57451A01463300668754 /* Engine.caf in Resources */,
 				29DF57431A01463300668754 /* Collect.caf in Resources */,
 				29C6987519DADCD10030A38D /* Graphics.atlas in Resources */,
+				29B7CC821A0349CC00A57A77 /* LaunchScreen.xib in Resources */,
 				29DD4DE419FB72AD008D8C24 /* spark.png in Resources */,
 				29C6985519DA63F00030A38D /* NawazAnimations.plist in Resources */,
 				29C6982F19DA5ADA0030A38D /* Images.xcassets in Resources */,
@@ -533,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Nawaz Go/Tappy Nawaz-Prefix.pch";
 				INFOPLIST_FILE = "Go Nawaz Go/Tappy Nawaz-Info.plist";
@@ -549,6 +558,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Go Nawaz Go/Tappy Nawaz-Prefix.pch";
 				INFOPLIST_FILE = "Go Nawaz Go/Tappy Nawaz-Info.plist";

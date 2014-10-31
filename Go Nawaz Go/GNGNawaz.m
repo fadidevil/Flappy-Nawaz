@@ -38,19 +38,17 @@ static NSString* const kKeyNawazAnimation = @"NawazAnimation";
         
         CGMutablePathRef path = CGPathCreateMutable();
         
-        CGPathMoveToPoint(path, NULL, 20 - offsetX, 2 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 22 - offsetX, 3 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 21 - offsetX, 4 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 17 - offsetX, 7 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 16 - offsetX, 10 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 15 - offsetX, 17 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 11 - offsetX, 20 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 8 - offsetX, 21 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 3 - offsetX, 16 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 2 - offsetX, 11 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 5 - offsetX, 7 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 0 - offsetX, 6 - offsetY);
-        CGPathAddLineToPoint(path, NULL, 8 - offsetX, 0 - offsetY);
+        CGPathMoveToPoint(path, NULL, 46 - offsetX, 9 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 35 - offsetX, 16 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 32 - offsetX, 21 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 32 - offsetX, 34 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 27 - offsetX, 39 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 21 - offsetX, 42 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 7 - offsetX, 33 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 7 - offsetX, 24 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 4 - offsetX, 14 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 17 - offsetX, 1 - offsetY);
+        CGPathAddLineToPoint(path, NULL, 45 - offsetX, 5 - offsetY);
         
         CGPathCloseSubpath(path);
         
